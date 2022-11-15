@@ -26,7 +26,7 @@ jobs:
           restore-keys: node_modules-
 
       - name: Install packages with npm
-        runs: |
+        run: |
           npm ci
 
   Build:
@@ -51,6 +51,6 @@ jobs:
           key: node_modules-${{ hashFiles('**/package-lock.json') }}
 
       - name: Build
-        runs: |
+        run: |
           npm rebuild node-saas --force
           npm run build -- --colors
